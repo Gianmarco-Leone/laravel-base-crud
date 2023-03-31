@@ -13,6 +13,7 @@
             <th scope="col">Album</th>
             <th scope="col">Autore</th>
             <th scope="col">Editore</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +24,15 @@
             <td>{{$song->album}}</td>
             <td>{{$song->author}}</td>
             <td>{{$song->editor}}</td>
+            <td>
+                <a href="{{route('songs.show', ['song'=>$song])}}">
+                {{-- 
+                In forma abbreviata sarebbe:
+                <a href="{{route('songs.show', $song)}}"> 
+                --}}
+                    Dettaglio
+                </a>
+            </td>
         </tr>
         @endforeach
     </tbody>

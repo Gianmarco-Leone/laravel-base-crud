@@ -1,9 +1,18 @@
 @import "~bootstrap/scss/bootstrap";
 
-.jumbotron {
-    min-height: 100vh;
-}
-
 img {
     max-height: 150px;
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+    section {
+        .my-card {
+            border: 2px solid #111;
+            padding: 1rem;
+        }
+    }
 }

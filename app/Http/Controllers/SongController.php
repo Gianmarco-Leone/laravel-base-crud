@@ -49,9 +49,11 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+     //  Con questa funzione ritorno il dettaglio della singola song passando come parametro l'intero oggetto Song
+    public function show(Song $song)
     {
-        //
+        return view('songs.show', compact('song'));
     }
 
     /**
