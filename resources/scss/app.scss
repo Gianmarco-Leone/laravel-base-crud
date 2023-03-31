@@ -4,15 +4,19 @@ img {
     max-height: 150px;
 }
 
-ul {
-    list-style: none;
-}
-
 main {
     section {
         .my-card {
             border: 2px solid #111;
             padding: 1rem;
+
+            ul {
+                list-style: none;
+
+                li {
+                    margin: 0.5rem 0;
+                }
+            }
         }
     }
 }
