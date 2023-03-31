@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Song;
+
 class SongController extends Controller
 {
     /**
@@ -11,9 +13,13 @@ class SongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //  Con questa funzione recupero le songs presenti nel database e le passo al file che si occupa del layout
     public function index()
     {
-        //
+        $songs = Song::all();
+        
+        return view('songs.index', compact('songs'));
     }
 
     /**
