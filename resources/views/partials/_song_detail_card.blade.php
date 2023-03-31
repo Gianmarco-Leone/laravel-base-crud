@@ -9,7 +9,7 @@
                 Album:
             </span>
             <span class="fw-semibold text-muted">
-                {{$song->album}}
+                {{ucfirst($song->album)}}
             </span>
         </li>
         <li>

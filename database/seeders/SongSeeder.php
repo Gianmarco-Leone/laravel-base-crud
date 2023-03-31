@@ -7,6 +7,8 @@ use Illuminate\Database\Seeder;
 
 use App\Models\Song;
 
+use Faker\Generator as Faker;
+
 class SongSeeder extends Seeder
 {
     /**
@@ -14,7 +16,7 @@ class SongSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         $song = new Song;
 
@@ -47,5 +49,18 @@ class SongSeeder extends Seeder
         $song->poster = 'https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41kj36cVMFL._AC_SX425_.jpg';
 
         $song->save();
+
+        for($i = 0; $i < 50; $i++) {
+            $song = new Song;
+
+            $song->title = $faker->word();
+            $song->album = $faker->word();
+            $song->author = $faker->firstName(null);
+            $song->editor = $faker->company() ;
+            $song->length = $faker->randomFloat(2, 1, 120);
+            $song->poster = 'https://picsum.photos/150/150';
+    
+            $song->save();
+        }
     }
 }

@@ -2,7 +2,7 @@
 
 @section('page_name', 'Brano')
 
-@section('page_title', 'Brano: ' . $song->title)
+@section('page_title', 'Brano: ' . ucfirst($song->title))
 
 @section('main_content',)
 <div class="row justify-content-center my-5">

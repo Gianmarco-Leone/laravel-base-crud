@@ -20,17 +20,17 @@
         @foreach($songs as $song)
         <tr>
             <th scope="row">{{$song->id}}</th>
-            <td>{{$song->title}}</td>
-            <td>{{$song->album}}</td>
+            <td>{{ucfirst($song->title)}}</td>
+            <td>{{ucfirst($song->album)}}</td>
             <td>{{$song->author}}</td>
             <td>{{$song->editor}}</td>
-            <td>
+            <td class="ps-4">
                 <a href="{{route('songs.show', ['song'=>$song])}}">
                 {{-- 
                 In forma abbreviata sarebbe:
                 <a href="{{route('songs.show', $song)}}"> 
                 --}}
-                    Dettaglio
+                <i class="fa-solid fa-circle-info text-white"></i>
                 </a>
             </td>
         </tr>
