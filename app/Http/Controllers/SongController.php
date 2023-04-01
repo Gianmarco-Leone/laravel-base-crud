@@ -17,7 +17,7 @@ class SongController extends Controller
     //  Con questa funzione recupero le songs presenti nel database e le passo al file che si occupa del layout
     public function index()
     {
-        $songs = Song::limit(20)->offset(0)->get();
+        $songs = Song::paginate(10);
         
         return view('songs.index', compact('songs'));
     }

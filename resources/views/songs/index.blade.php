@@ -37,4 +37,7 @@
         @endforeach
     </tbody>
 </table>
+<div class="pagination-control">
+    {{$songs->links()}}
+</div>
 @endsection
