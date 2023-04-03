@@ -1,0 +1,62 @@
+@extends('layouts.app')
+
+@section('page_name', 'Aggiungi')
+
+@section('page_title', 'Aggiungi brano')
+
+@section('main_content')
+
+<form action="{{route('songs.store')}}" method="POST" class="row">
+
+    <div class="col-6">
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Titolo</label>
+                    <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp">
+                </div>
+            </div>
+        
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="album" class="form-label">Album</label>
+                    <input type="text" class="form-control" id="album" name="album" aria-describedby="emailHelp">
+                </div>
+            </div>
+        
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="author" class="form-label">Autore</label>
+                    <input type="text" class="form-control" id="author" name="author" aria-describedby="emailHelp">
+                </div>
+            </div>
+        
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="length" class="form-label">Durata</label>
+                    <input type="number" step="0.01" class="form-control" id="length" name="length" aria-describedby="emailHelp">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-3">
+                    <label for="poster" class="form-label">Copertina</label>
+                    <textarea class="form-control" id="poster" name="poster" aria-describedby="emailHelp" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 d-flex">
+        <button type="submit" class="btn btn-outline-dark ms-auto mt-3">
+            Salva
+        </button>
+    </div>
+
+</form>
+
+@endsection

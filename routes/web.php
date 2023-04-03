@@ -19,3 +19,12 @@ use App\Http\Controllers\SongController;
 Route::get('/', [PageController::class, 'homepage'])->name('home');
 
 Route::resource('songs', SongController::class);
+
+// * Rotta per la visualizzazione della lista
+// Route::get('/songs', [SongController::class, 'index'])->name('songs.index');
+
+// * Rotta per la visualizzazione del dettaglio
+// Route::get('/songs/{song}', [SongController::class, 'show'])->name('songs.show');
+
+// * Rotta per la visualizzazione del form
+// Route::get('/songs/create', [SongController::class, 'create'])->name('songs.create');

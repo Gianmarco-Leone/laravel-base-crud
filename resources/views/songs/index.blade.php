@@ -11,12 +11,16 @@
 
 @section('main_content')
 
-<div class="row">
+<div class="row align-items-center">
     <div class="col-8">
         <form class="d-flex my-3" role="search">
             <input class="form-control me-2" type="search"  name="term" placeholder="Cerca brano..." aria-label="Search">
             <button class="btn btn-outline-dark">Cerca</button>
         </form>
+    </div>
+    <div class="col-4 d-flex">
+        <a class="btn btn-outline-dark ms-auto" href="{{route('songs.create')}}">
+        Aggiungi brano</a>
     </div>
 </div>
 

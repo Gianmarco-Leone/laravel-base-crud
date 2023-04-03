@@ -17,9 +17,13 @@ class SongController extends Controller
     //  Con questa funzione recupero le songs presenti nel database e le passo al file che si occupa del layout
     public function index(Request $request)
     {
+        // Se nel form ricerca è presente qualcosa
         if($request->has('term')) {
             $term = $request->get('term');
+            // Prendi dal DB i risultati in funzione del termine passato
             $songs = Song::where('title', 'LIKE', "%$term%")->paginate(10)->withQueryString();
+            
+            // Altrimenti recupera tutti i risultati
         } else {
             $songs = Song::paginate(10);
         }
@@ -32,9 +36,11 @@ class SongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     //  Con questa funzione ritorno la vista del layout dove è presente il form per aggiungere un nuovo elemento al DB
     public function create()
     {
-        //
+        return view('songs.create');
     }
 
     /**
