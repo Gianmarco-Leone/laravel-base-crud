@@ -21,12 +21,14 @@
             </span>
         </li>
         <li>
+            @if(isset($song->editor))
             <span class="d-block fs-5 fw-semibold">
                 Editore:
             </span>
             <span class="fw-semibold text-muted">
                 {{$song->editor}}
             </span>
+            @endif
         </li>
         <li>
             <span class="d-block fs-5 fw-semibold">
