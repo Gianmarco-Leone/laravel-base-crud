@@ -56,13 +56,18 @@ class SongController extends Controller
         $data = $request->all();
 
         $song = new Song();
+        
+        // ! METODO 1 (lungo):
+        // $song->title = $data['title'];
+        // $song->album = $data['album'];
+        // $song->author = $data['author'];
+        // $song->editor = $data['editor'];
+        // $song->length = $data['length'];
+        // $song->poster = $data['poster'];
 
-        $song->title = $data['title'];
-        $song->album = $data['album'];
-        $song->author = $data['author'];
-        $song->editor = $data['editor'];
-        $song->length = $data['length'];
-        $song->poster = $data['poster'];
+        // ! METODO 2 (corto):
+        // Solo se, ad ogni chiave dell'array associativo $data, corrisponde un attributo con nome uguale, posso utilizzare il metodo fill(), per utilizzarlo devo però dichiarare quali sono gli attributi $fillable all'interno del modello di riferimento
+        $song->fill($data);
 
         $song->save();
 

@@ -32,7 +32,7 @@ Ogni brano dovrà avere:
 
 ## Milestone 1
 
-Tramite gli appositi comandi artisan creare un model con relativa migration e un resource controller.
+Tramite gli appositi comandi `artisan` creare un _model_ con relativa _migration_ e un _resource_ controller.
 
 ## Milestone 2
 
@@ -47,7 +47,7 @@ Iniziate a definire le prime operazioni CRUD con le relative view:
 
 ## Milestone 3
 
-Aggiunta delle rotte `create` e `store` con annesso form.
+Aggiunta delle rotte `create` e `store` con annesso form per l'aggiunta ed il salvataggio di nuovi brani.
 
 ![Screenshot](./public/img/Screenshot_form.png)
 

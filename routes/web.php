@@ -28,3 +28,6 @@ Route::resource('songs', SongController::class);
 
 // * Rotta per la visualizzazione del form
 // Route::get('/songs/create', [SongController::class, 'create'])->name('songs.create');
+
+// * Rotta per il salvataggio dei dati
+// Route::post('/songs', [SongController::class, 'store'])->name('songs.store');
