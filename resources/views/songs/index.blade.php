@@ -2,9 +2,24 @@
 
 @section('page_name', 'Lista')
 
+@section('cdn')
+{{-- FONT AWESOME --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@endsection
+
 @section('page_title', 'Lista Brani')
 
-@section('main_content',)
+@section('main_content')
+
+<div class="row">
+    <div class="col-8">
+        <form class="d-flex my-3" role="search">
+            <input class="form-control me-2" type="search"  name="term" placeholder="Cerca brano..." aria-label="Search">
+            <button class="btn btn-outline-dark">Cerca</button>
+        </form>
+    </div>
+</div>
+
 <table class="table table-dark table-striped">
     <thead>
         <tr>

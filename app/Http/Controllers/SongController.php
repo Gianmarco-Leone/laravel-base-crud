@@ -15,9 +15,14 @@ class SongController extends Controller
      */
 
     //  Con questa funzione recupero le songs presenti nel database e le passo al file che si occupa del layout
-    public function index()
+    public function index(Request $request)
     {
-        $songs = Song::paginate(10);
+        if($request->has('term')) {
+            $term = $request->get('term');
+            $songs = Song::where('title', 'LIKE', "%$term%")->paginate(10)->withQueryString();
+        } else {
+            $songs = Song::paginate(10);
+        }
         
         return view('songs.index', compact('songs'));
     }
