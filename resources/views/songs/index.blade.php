@@ -38,6 +38,6 @@
     </tbody>
 </table>
 <div class="pagination-control">
-    {{$songs->links()}}
+    {{$songs->links('pagination::bootstrap-5')}}
 </div>
 @endsection
