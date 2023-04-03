@@ -49,9 +49,25 @@ class SongController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     //  Con questa funzione salvo i valori inseriti nel form della rotta create
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $song = new Song();
+
+        $song->title = $data['title'];
+        $song->album = $data['album'];
+        $song->author = $data['author'];
+        $song->editor = $data['editor'];
+        $song->length = $data['length'];
+        $song->poster = $data['poster'];
+
+        $song->save();
+
+        // ritorno il redirect alla pagina show(quella del dettaglio) per visionare il nuovo elemento aggiunto
+        return redirect()->route('songs.show', $song);
     }
 
     /**

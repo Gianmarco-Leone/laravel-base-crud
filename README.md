@@ -39,15 +39,17 @@ Tramite gli appositi comandi artisan creare un model con relativa migration e un
 Iniziate a definire le prime operazioni CRUD con le relative view:
 `index()`
 
-![Screenshot](./public/img/Screenshot_list.png)
+![Screenshot](./public/img/Screenshot_1.png)
 
 `show()`
 
 ![Screenshot](./public/img/Screenshot_detail.png)
 
-<!-- ## Milestone 3
+## Milestone 3
 
-Aggiunta delle rotte "Create" e "Store" con annesso form. -->
+Aggiunta delle rotte `create` e `store` con annesso form.
+
+![Screenshot](./public/img/Screenshot_form.png)
 
 ## Bonus
 
