@@ -58,6 +58,12 @@ class SongController extends Controller
             'album'=>'required',
             'author'=>'required',
             'length'=>'required|numeric',
+        ], [
+            'title.required'=>"Il titolo è obbligatorio",
+            'album.required'=>"Il nome dell'album è obbligatorio",
+            'author.required'=>"Il nome dell'autore è obbligatorio",
+            'length.required'=>"La durata del brano è obbligatoria",
+            'length.numeric'=>"La durata del brano deve essere un numero",
         ]);
 
         $data = $request->all();
