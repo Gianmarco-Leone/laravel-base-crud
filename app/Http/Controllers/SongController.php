@@ -53,6 +53,13 @@ class SongController extends Controller
      //  Con questa funzione salvo i valori inseriti nel form della rotta create
     public function store(Request $request)
     {
+        $request->validate([
+            'title'=>'required',
+            'album'=>'required',
+            'author'=>'required',
+            'length'=>'required|numeric',
+        ]);
+
         $data = $request->all();
 
         $song = new Song();

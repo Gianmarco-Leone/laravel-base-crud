@@ -6,6 +6,17 @@
 
 @section('main_content')
 
+{{-- Se ci sono presenti errori nella compilazione del form --}}
+@if($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{$error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 <form action="{{route('songs.store')}}" method="POST" class="row">
     @csrf
 
