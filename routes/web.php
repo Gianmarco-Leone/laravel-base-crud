@@ -26,8 +26,11 @@ Route::resource('songs', SongController::class);
 // * Rotta per la visualizzazione del dettaglio
 // Route::get('/songs/{song}', [SongController::class, 'show'])->name('songs.show');
 
-// * Rotta per la visualizzazione del form
+// * Rotta per la visualizzazione del form creazione elemento
 // Route::get('/songs/create', [SongController::class, 'create'])->name('songs.create');
 
 // * Rotta per il salvataggio dei dati
 // Route::post('/songs', [SongController::class, 'store'])->name('songs.store');
+
+// * Rotta per la visualizzazione del form modifica dati
+// Route::get('/songs/{song}/edit', [SongController::class, 'edit'])->name('songs.edit');

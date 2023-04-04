@@ -32,7 +32,7 @@
             <th scope="col">Album</th>
             <th scope="col">Autore</th>
             <th scope="col">Editore</th>
-            <th scope="col">Action</th>
+            <th scope="col" class="text-center">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -43,13 +43,17 @@
             <td>{{ucfirst($song->album)}}</td>
             <td>{{$song->author}}</td>
             <td>{{$song->editor}}</td>
-            <td class="ps-4">
+            <td class="text-center">
                 <a href="{{route('songs.show', ['song'=>$song])}}">
                 {{-- 
                 In forma abbreviata sarebbe:
                 <a href="{{route('songs.show', $song)}}"> 
                 --}}
-                <i class="fa-solid fa-circle-info text-white"></i>
+                    <i class="fa-solid fa-circle-info"></i>
+                </a>
+
+                <a href="{{route('songs.edit', $song)}}" class="mx-2">
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </a>
             </td>
         </tr>

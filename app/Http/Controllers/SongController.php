@@ -14,7 +14,7 @@ class SongController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //  Con questa funzione recupero le songs presenti nel database e le passo al file che si occupa del layout
+    // * Con questa funzione recupero le songs presenti nel database e le passo al file che si occupa del layout
     public function index(Request $request)
     {
         // Se nel form ricerca è presente qualcosa
@@ -37,7 +37,7 @@ class SongController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     //  Con questa funzione ritorno la vista del layout dove è presente il form per aggiungere un nuovo elemento al DB
+     // * Con questa funzione ritorno la vista del layout dove è presente il form per aggiungere un nuovo elemento al DB
     public function create()
     {
         return view('songs.create');
@@ -50,7 +50,7 @@ class SongController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     //  Con questa funzione salvo i valori inseriti nel form della rotta create
+     // * Con questa funzione salvo i valori inseriti nel form della rotta create
     public function store(Request $request)
     {
         $request->validate([
@@ -112,7 +112,7 @@ class SongController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     //  Con questa funzione ritorno il dettaglio della singola song passando come parametro l'intero oggetto Song
+     // * Con questa funzione ritorno il dettaglio della singola song passando come parametro l'intero oggetto Song
     public function show(Song $song)
     {
         return view('songs.show', compact('song'));
@@ -124,9 +124,11 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+
+     // * Con questa funzione ritorno la vista del layout dove è presente il form per modificare un elemento del DB
+    public function edit(Song $song)
     {
-        //
+        return view('songs.edit', compact('song'));
     }
 
     /**
@@ -136,9 +138,44 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+     // * Con questa funzione salvo i valori inseriti nel form della rotta edit
+    public function update(Request $request, Song $song)
     {
-        //
+        $request->validate([
+            'title'=>'required|string|max:60',
+            'album'=>'required|string|max:60',
+            'author'=>'required|string|max:30',
+            'editor'=>'nullable|string|max:40',
+            'length'=>'required|numeric|between:0.01,999.99',
+            'poster'=>'nullable|string',
+        ], [
+            'title.required'=>"Il titolo è obbligatorio",
+            'title.string'=>"Il titolo deve essere una stringa",
+            'title.max'=>"Il titolo deve essere di massimo 60 caratteri",
+
+            'album.required'=>"Il nome dell'album è obbligatorio",
+            'album.string'=>"Il nome dell'album deve essere una stringa",
+            'album.max'=>"Il nome dell'album deve essere di massimo 60 caratteri",
+
+            'author.required'=>"Il nome dell'autore è obbligatorio",
+            'author.string'=>"Il nome dell'autore deve essere una stringa",
+            'author.max'=>"Il nome dell'autore deve essere di massimo 60 caratteri",
+
+            'editor.string'=>"Il nome dell'editore deve essere una stringa",
+            'editor.max'=>"Il nome dell'editore deve essere di massimo 60 caratteri",
+
+            'length.required'=>"La durata del brano è obbligatoria",
+            'length.numeric'=>"La durata del brano deve essere un numero",
+            'length.between'=>"La durata del brano deve essere un numero compreso tra 0.01 e 999.99",
+            
+            'poster.string'=>"Il titolo deve essere una stringa",
+        ]);
+
+        $data = $request->all();
+        $song->update($data);
+
+        return redirect()->route('songs.show', $song);
     }
 
     /**
