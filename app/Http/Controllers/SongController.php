@@ -54,16 +54,33 @@ class SongController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title'=>'required',
-            'album'=>'required',
-            'author'=>'required',
-            'length'=>'required|numeric',
+            'title'=>'required|string|max:60',
+            'album'=>'required|string|max:60',
+            'author'=>'required|string|max:30',
+            'editor'=>'nullable|string|max:40',
+            'length'=>'required|numeric|between:0.01,999.99',
+            'poster'=>'nullable|string',
         ], [
             'title.required'=>"Il titolo è obbligatorio",
+            'title.string'=>"Il titolo deve essere una stringa",
+            'title.max'=>"Il titolo deve essere di massimo 60 caratteri",
+
             'album.required'=>"Il nome dell'album è obbligatorio",
+            'album.string'=>"Il nome dell'album deve essere una stringa",
+            'album.max'=>"Il nome dell'album deve essere di massimo 60 caratteri",
+
             'author.required'=>"Il nome dell'autore è obbligatorio",
+            'author.string'=>"Il nome dell'autore deve essere una stringa",
+            'author.max'=>"Il nome dell'autore deve essere di massimo 60 caratteri",
+
+            'editor.string'=>"Il nome dell'editore deve essere una stringa",
+            'editor.max'=>"Il nome dell'editore deve essere di massimo 60 caratteri",
+
             'length.required'=>"La durata del brano è obbligatoria",
             'length.numeric'=>"La durata del brano deve essere un numero",
+            'length.between'=>"La durata del brano deve essere un numero compreso tra 0.01 e 999.99",
+            
+            'poster.string'=>"Il titolo deve essere una stringa",
         ]);
 
         $data = $request->all();
