@@ -9,6 +9,7 @@
 {{-- Se ci sono presenti errori nella compilazione del form --}}
 @if($errors->any())
 <div class="alert alert-danger">
+    <h5>Durante l'invio del form sono stati riscontrati i seguenti errori:</h5>
     <ul>
         @foreach($errors->all() as $error)
         <li>{{$error}}</li>
@@ -25,35 +26,60 @@
             <div class="col-6">
                 <div class="mb-3">
                     <label for="title" class="form-label">Titolo</label>
-                    <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp">
+                    <input type="text" class="@error('title') is-invalid @enderror form-control" id="title" name="title" value="{{old('title')}}">
+                    @error('title')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
                 </div>
             </div>
         
             <div class="col-6">
                 <div class="mb-3">
                     <label for="album" class="form-label">Album</label>
-                    <input type="text" class="form-control" id="album" name="album" aria-describedby="emailHelp">
+                    <input type="text" class="@error('album') is-invalid @enderror form-control" id="album" name="album" value="{{old('album')}}">
+                    @error('album')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
                 </div>
             </div>
         
             <div class="col-5">
                 <div class="mb-3">
                     <label for="author" class="form-label">Autore</label>
-                    <input type="text" class="form-control" id="author" name="author" aria-describedby="emailHelp">
+                    <input type="text" class="@error('author') is-invalid @enderror form-control" id="author" name="author" value="{{old('author')}}">
+                    @error('author')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
                 </div>
             </div>
         
             <div class="col-2">
                 <div class="mb-3">
                     <label for="length" class="form-label">Durata</label>
-                    <input type="number" step="0.01" class="form-control" id="length" name="length" aria-describedby="emailHelp">
+                    <input type="number" step="0.01" class="@error('length') is-invalid @enderror form-control" id="length" name="length" value="{{old('length')}}">
+                    @error('length')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
                 </div>
             </div>
 
             <div class="col-5">
                 <div class="mb-3">
                     <label for="editor" class="form-label">Editore</label>
-                    <input type="text" class="form-control" id="editor" name="editor" aria-describedby="emailHelp">
+                    <input type="text" class="@error('editor') is-invalid @enderror form-control" id="editor" name="editor" value="{{old('editor')}}">
+                    @error('editor')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
                 </div>
             </div>
         </div>
@@ -64,7 +90,12 @@
             <div class="col-12">
                 <div class="mb-3">
                     <label for="poster" class="form-label">Copertina (link immagine)</label>
-                    <textarea class="form-control" id="poster" name="poster" aria-describedby="emailHelp" rows="5"></textarea>
+                    <textarea class="@error('poster') is-invalid @enderror form-control" id="poster" name="poster" rows="5">{{old('poster')}}</textarea>
+                    @error('poster')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
                 </div>
             </div>
         </div>
