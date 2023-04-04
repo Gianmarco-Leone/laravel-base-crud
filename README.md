@@ -46,7 +46,7 @@ Iniziate a definire le prime operazioni CRUD con le relative view:
 
 `show()`, che mostra il dettaglio del singolo elemento:
 
-![Screenshot](./public/img/Screenshot_detail_2.png)
+![Screenshot](./public/img/Screenshot_detail.png)
 
 ## Milestone 3
 
