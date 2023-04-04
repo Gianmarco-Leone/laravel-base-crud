@@ -1,42 +1,74 @@
-<div class="my-card text-center">
-    <figure>
-        <img src="{{$song->poster}}" alt="{{$song->title}} poster">
-    </figure>
+<div class="my-card">
+    <div class="row">
+        <div class="col-8 text-center">
+            <div class="row g-5">
+                <div class="col-4">
+                    <div>
+                        <span class="d-block fs-5 fw-semibold">
+                            Titolo:
+                        </span>
+                        <span class="fw-semibold text-muted">
+                            {{ucfirst($song->title)}}
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="col-4">
+                    <div>
+                        <span class="d-block fs-5 fw-semibold">
+                            Album:
+                        </span>
+                        <span class="fw-semibold text-muted">
+                            {{ucfirst($song->album)}}
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="col-4">
+                    <div>
+                        <span class="d-block fs-5 fw-semibold">
+                            Autore:
+                        </span>
+                        <span class="fw-semibold text-muted">
+                            {{ucfirst($song->author)}}
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="col-4">
+                    <div>
+                        <span class="d-block fs-5 fw-semibold">
+                            Durata:
+                        </span>
+                        <span class="fw-semibold text-muted">
+                            {{$song->length}} m
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="col-4">
+                    @if(isset($song->editor))
+                    <div>
+                        <span class="d-block fs-5 fw-semibold">
+                            Editore:
+                        </span>
+                        <span class="fw-semibold text-muted">
+                            {{$song->editor}}
+                        </span>
+                    </div>
+                    @endif
+                </div>
+            </div>
+        </div>
 
-    <ul class="p-0 my-3">
-        <li>
-            <span class="d-block fs-5 fw-semibold">
-                Album:
-            </span>
-            <span class="fw-semibold text-muted">
-                {{ucfirst($song->album)}}
-            </span>
-        </li>
-        <li>
-            <span class="d-block fs-5 fw-semibold">
-                Autore:
-            </span>
-            <span class="fw-semibold text-muted">
-                {{$song->author}}
-            </span>
-        </li>
-        <li>
-            @if(isset($song->editor))
-            <span class="d-block fs-5 fw-semibold">
-                Editore:
-            </span>
-            <span class="fw-semibold text-muted">
-                {{$song->editor}}
-            </span>
-            @endif
-        </li>
-        <li>
-            <span class="d-block fs-5 fw-semibold">
-                Durata:
-            </span>
-            <span class="fw-semibold text-muted">
-                {{$song->length}} m
-            </span>
-        </li>
-    </ul>
+        <div class="col-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <figure>
+                        <img src="{{$song->poster}}" alt="{{$song->title}} poster">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

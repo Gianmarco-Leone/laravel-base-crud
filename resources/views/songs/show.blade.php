@@ -6,7 +6,7 @@
 
 @section('main_content')
     <div class="row justify-content-center my-5">
-        <div class="col-4">
+        <div class="col-10">
             @include('partials._song_detail_card')
         </div>
     </div>
