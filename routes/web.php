@@ -34,3 +34,9 @@ Route::resource('songs', SongController::class);
 
 // * Rotta per la visualizzazione del form modifica dati
 // Route::get('/songs/{song}/edit', [SongController::class, 'edit'])->name('songs.edit');
+
+// * Rotta per il salvataggio dei dati modificati
+// Route::put('/songs/{song}', [SongController::class, 'update'])->name('songs.update');
+
+// * Rotta per l'eliminazione dell'elemento dal DB
+// Route::delete('/songs/{song}/delete', [SongController::class, 'destroy'])->name('songs.destroy');

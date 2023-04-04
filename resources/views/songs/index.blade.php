@@ -55,6 +55,14 @@
                 <a href="{{route('songs.edit', $song)}}" class="mx-2">
                     <i class="fa-solid fa-pen-to-square"></i>
                 </a>
+
+                <form action="{{route('songs.destroy', $song)}}" method="POST" class="d-inline-block">
+                    @csrf
+                    @method('delete')
+
+                    <button class="fa-solid fa-trash btn-icon text-danger">
+                    </button>
+                </form>
             </td>
         </tr>
         @endforeach

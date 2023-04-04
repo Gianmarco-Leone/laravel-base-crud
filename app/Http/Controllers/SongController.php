@@ -127,9 +127,12 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+
+     // * Con questa funzione cancello l'elemento dal DB
+    public function destroy(Song $song)
     {
-        //
+        $song->delete();
+        return redirect()->route('songs.index');
     }
 
     private function validation($data) {

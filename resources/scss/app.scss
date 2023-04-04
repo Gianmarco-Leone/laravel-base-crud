@@ -1,29 +1,36 @@
 @import "./partials/bootstrap_loader.scss";
 
-body {
-    background-color: $bg-body-dark;
-    color: #fff;
-}
-
 img {
     max-height: 150px;
 }
 
-main {
-    section {
-        .pagination-control {
-            margin: 2rem 0;
-        }
+body {
+    background-color: $bg-body-dark;
+    color: #fff;
 
-        .my-card {
-            border: 2px solid #fff;
-            padding: 1rem;
+    main {
+        section {
+            .btn-icon {
+                background-color: transparent;
+                margin: 0;
+                padding: 0;
+                border: none;
+            }
 
-            ul {
-                list-style: none;
+            .pagination-control {
+                margin: 2rem 0;
+            }
 
-                li {
-                    margin: 0.5rem 0;
+            .my-card {
+                border: 2px solid #fff;
+                padding: 1rem;
+
+                ul {
+                    list-style: none;
+
+                    li {
+                        margin: 0.5rem 0;
+                    }
                 }
             }
         }

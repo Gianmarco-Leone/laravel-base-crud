@@ -41,7 +41,7 @@ Tramite gli appositi comandi `artisan` creare un _model_ con relativa _migration
 Iniziate a definire le prime operazioni CRUD con le relative view:
 `index()`, che mostra la lista degli elementi del DB (con relativa paginazione).
 
-![Screenshot](./public/img/Screenshot_list.png)
+![Screenshot](./public/img/Screenshot_final_list.png)
 
 `show()`, che mostra il dettaglio del singolo elemento.
 
@@ -57,11 +57,9 @@ Aggiunta delle rotte `create` e `store` con annesso form per l'aggiunta ed il sa
 
 Aggiunta delle rotte `update`, `edit` e `destroy` con annesso form per la modifica ed il salvataggio dei nuovi dati, completando così il ciclo completo delle operazioni CRUD.
 
-`edit` e `update`
+Form visualizzato dall' `edit`
 
 ![Screenshot](./public/img/Screenshot_edit.png)
-
-_DA COMPLETARE_...
 
 ## Bonus 1
 
