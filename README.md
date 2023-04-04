@@ -65,7 +65,7 @@ _DA COMPLETARE_...
 
 ## Bonus 1
 
-Creazione del seeder per la tabella songs utilizzando Faker.
+Creazione del `Seeder` per la tabella songs utilizzando Faker.
 
 ## Bonus 2
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\Models\Song;
 
@@ -53,37 +54,8 @@ class SongController extends Controller
      // * Con questa funzione salvo i valori inseriti nel form della rotta create
     public function store(Request $request)
     {
-        $request->validate([
-            'title'=>'required|string|max:60',
-            'album'=>'required|string|max:60',
-            'author'=>'required|string|max:30',
-            'editor'=>'nullable|string|max:40',
-            'length'=>'required|numeric|between:0.01,999.99',
-            'poster'=>'nullable|string',
-        ], [
-            'title.required'=>"Il titolo è obbligatorio",
-            'title.string'=>"Il titolo deve essere una stringa",
-            'title.max'=>"Il titolo deve essere di massimo 60 caratteri",
-
-            'album.required'=>"Il nome dell'album è obbligatorio",
-            'album.string'=>"Il nome dell'album deve essere una stringa",
-            'album.max'=>"Il nome dell'album deve essere di massimo 60 caratteri",
-
-            'author.required'=>"Il nome dell'autore è obbligatorio",
-            'author.string'=>"Il nome dell'autore deve essere una stringa",
-            'author.max'=>"Il nome dell'autore deve essere di massimo 60 caratteri",
-
-            'editor.string'=>"Il nome dell'editore deve essere una stringa",
-            'editor.max'=>"Il nome dell'editore deve essere di massimo 60 caratteri",
-
-            'length.required'=>"La durata del brano è obbligatoria",
-            'length.numeric'=>"La durata del brano deve essere un numero",
-            'length.between'=>"La durata del brano deve essere un numero compreso tra 0.01 e 999.99",
-            
-            'poster.string'=>"Il titolo deve essere una stringa",
-        ]);
-
-        $data = $request->all();
+        // Invoco metodo personalizzato che effettua validazioni
+        $data = $this->validation($request->all());
 
         $song = new Song();
         
@@ -142,14 +114,36 @@ class SongController extends Controller
      // * Con questa funzione salvo i valori inseriti nel form della rotta edit
     public function update(Request $request, Song $song)
     {
-        $request->validate([
+        // Invoco metodo personalizzato che effettua validazioni
+        $data = $this->validation($request->all());
+        $song->update($data);
+
+        return redirect()->route('songs.show', $song);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+    private function validation($data) {
+        return Validator::make(
+            $data,
+            [
             'title'=>'required|string|max:60',
             'album'=>'required|string|max:60',
             'author'=>'required|string|max:30',
             'editor'=>'nullable|string|max:40',
             'length'=>'required|numeric|between:0.01,999.99',
             'poster'=>'nullable|string',
-        ], [
+            ],
+            [
             'title.required'=>"Il titolo è obbligatorio",
             'title.string'=>"Il titolo deve essere una stringa",
             'title.max'=>"Il titolo deve essere di massimo 60 caratteri",
@@ -170,22 +164,7 @@ class SongController extends Controller
             'length.between'=>"La durata del brano deve essere un numero compreso tra 0.01 e 999.99",
             
             'poster.string'=>"Il titolo deve essere una stringa",
-        ]);
-
-        $data = $request->all();
-        $song->update($data);
-
-        return redirect()->route('songs.show', $song);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+            ],
+        )->validate();
     }
 }
