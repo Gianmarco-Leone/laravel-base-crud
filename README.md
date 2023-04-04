@@ -5,7 +5,7 @@
 
 > Archivio brani musicali
 
-![Screenshot](./public/img/Screenshot_2.png)
+![Screenshot](./public/img/Screenshot_home.png)
 
 ## Tecnologie e Librerie
 
@@ -20,7 +20,9 @@
 
 ## Descrizione
 
-Creazione di un progetto Laravel 9 per gestire un archivio di brani musicali.
+Realizzazione di un progetto Laravel 9 per gestire un archivio di brani musicali lato Back Office, utilizzando tutte le operazioni **CRUD**.
+Il tema dell'applicazione è realizzato in _dark mode_.
+
 Ogni brano dovrà avere:
 
 -   title
@@ -37,20 +39,40 @@ Tramite gli appositi comandi `artisan` creare un _model_ con relativa _migration
 ## Milestone 2
 
 Iniziate a definire le prime operazioni CRUD con le relative view:
-`index()`
+`index()`, che mostra la lista degli elementi del DB (con relativa paginazione).
 
-![Screenshot](./public/img/Screenshot_1.png)
+![Screenshot](./public/img/Screenshot_list_songs.png)
 
-`show()`
+`show()`, che mostra il dettaglio del singolo elemento.
 
-![Screenshot](./public/img/Screenshot_detail.png)
+![Screenshot](./public/img/Screenshot_detail_2.png)
 
 ## Milestone 3
 
 Aggiunta delle rotte `create` e `store` con annesso form per l'aggiunta ed il salvataggio di nuovi brani.
 
-![Screenshot](./public/img/Screenshot_form.png)
+![Screenshot](./public/img/Screenshot_form_2.png)
 
-## Bonus
+## Milestone 4
+
+Aggiunta delle rotte `update`, `edit` e `destroy` con annesso form per la modifica ed il salvataggio dei nuovi dati, completando così il ciclo completo delle operazioni CRUD.
+
+_DA COMPLETARE_...
+
+## Bonus 1
 
 Creazione del seeder per la tabella songs utilizzando Faker.
+
+## Bonus 2
+
+Validare gli input ricevuti in fase di creazione e modifica, rispondendo con errori chiari e in italiano.
+
+![Screenshot](./public/img/Screenshot_bonus_error.png)
+
+_DA COMPLETARE PER IL FORM IN MODIFICA_...
+
+## Bonus 3
+
+Chiedere conferma di eliminazione record via Modal di BS5.
+
+_DA COMPLETARE_...

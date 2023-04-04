@@ -102,7 +102,7 @@
     </div>
 
     <div class="col-12 d-flex">
-        <button type="submit" class="btn btn-outline-dark ms-auto mt-3">
+        <button type="submit" class="btn btn-primary ms-auto mt-3">
             Salva
         </button>
     </div>

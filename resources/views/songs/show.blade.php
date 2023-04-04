@@ -12,6 +12,6 @@
 </div>
 
 <div class="text-center">
-    <a class="btn btn-dark" href="{{route('songs.index')}}">Torna alla lista</a>
+    <a class="btn btn-primary" href="{{route('songs.index')}}">Torna alla lista</a>
 </div>
 @endsection

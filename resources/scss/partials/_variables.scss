@@ -1,0 +1,33 @@
+// * OVERRIDE BS AND OTHER VARIABLES
+$primary: goldenrod;
+$danger: #dc3545;
+
+$primary-accent: #e0b341;
+$custom-dark: #343a40;
+$custom-darker: #212529;
+$bg-body-dark: #12161a;
+
+// * OVERRIDE BS LINKS
+$link-hover-color: $primary-accent;
+
+// * OVERRIDE PAGINATION
+// COLOR
+$pagination-bg: $custom-darker;
+$pagination-border-color: $custom-dark;
+
+// ACTIVE
+$pagination-active-color: $custom-dark;
+
+// DISABLED
+$pagination-disabled-bg: $custom-darker;
+$pagination-disabled-border-color: $custom-darker;
+
+// HOVER
+$pagination-hover-bg: $primary-accent;
+$pagination-hover-color: $custom-dark;
+$pagination-hover-border-color: $primary-accent;
+
+// FOCUS
+$pagination-focus-bg: $primary-accent;
+$pagination-focus-color: $custom-dark;
+$pagination-focus-border-color: $primary-accent;

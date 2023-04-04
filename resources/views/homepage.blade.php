@@ -12,7 +12,7 @@
     Apri il menu a tendina nella navbar per visualizzare l'archivio oppure
   </span>
   <br>
-  <a class="btn btn-dark my-5" href="{{route('songs.index')}}">
+  <a class="btn btn-primary my-5" href="{{route('songs.index')}}">
     Clicca qui
   </a>
 </p>

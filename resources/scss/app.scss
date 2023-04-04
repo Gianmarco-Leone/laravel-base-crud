@@ -1,4 +1,9 @@
-@import "~bootstrap/scss/bootstrap";
+@import "./partials/bootstrap_loader.scss";
+
+body {
+    background-color: $bg-body-dark;
+    color: #fff;
+}
 
 img {
     max-height: 150px;
@@ -11,7 +16,7 @@ main {
         }
 
         .my-card {
-            border: 2px solid #111;
+            border: 2px solid #fff;
             padding: 1rem;
 
             ul {
