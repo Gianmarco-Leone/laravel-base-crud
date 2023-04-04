@@ -4,33 +4,34 @@ img {
     max-height: 150px;
 }
 
-body {
+body,
+.modal-content {
     background-color: $bg-body-dark;
     color: #fff;
+}
 
-    main {
-        section {
-            .btn-icon {
-                background-color: transparent;
-                margin: 0;
-                padding: 0;
-                border: none;
-            }
+main {
+    section {
+        .btn-icon {
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
 
-            .pagination-control {
-                margin: 2rem 0;
-            }
+        .pagination-control {
+            margin: 2rem 0;
+        }
 
-            .my-card {
-                border: 2px solid #fff;
-                padding: 1rem;
+        .my-card {
+            border: 2px solid #fff;
+            padding: 1rem;
 
-                ul {
-                    list-style: none;
+            ul {
+                list-style: none;
 
-                    li {
-                        margin: 0.5rem 0;
-                    }
+                li {
+                    margin: 0.5rem 0;
                 }
             }
         }

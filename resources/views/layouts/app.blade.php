@@ -24,6 +24,8 @@
         @yield('main_content')
     </section>
   </main>
+
+  @yield('modals')
 </body>
 
 </html>

@@ -39,11 +39,12 @@ Tramite gli appositi comandi `artisan` creare un _model_ con relativa _migration
 ## Milestone 2
 
 Iniziate a definire le prime operazioni CRUD con le relative view:
-`index()`, che mostra la lista degli elementi del DB (con relativa paginazione).
+
+`index()`, che mostra la lista degli elementi del DB (con relativa paginazione):
 
 ![Screenshot](./public/img/Screenshot_final_list.png)
 
-`show()`, che mostra il dettaglio del singolo elemento.
+`show()`, che mostra il dettaglio del singolo elemento:
 
 ![Screenshot](./public/img/Screenshot_detail_2.png)
 
@@ -57,7 +58,7 @@ Aggiunta delle rotte `create` e `store` con annesso form per l'aggiunta ed il sa
 
 Aggiunta delle rotte `update`, `edit` e `destroy` con annesso form per la modifica ed il salvataggio dei nuovi dati, completando così il ciclo completo delle operazioni CRUD.
 
-Form visualizzato dall' `edit`
+Form visualizzato dall' `edit`:
 
 ![Screenshot](./public/img/Screenshot_edit.png)
 
@@ -77,4 +78,4 @@ Validare gli input ricevuti in fase di creazione e modifica, rispondendo con err
 
 Chiedere conferma di eliminazione record via Modal di BS5.
 
-_DA COMPLETARE_...
+![Screenshot](./public/img/Screenshot_bonus_modal.png)
