@@ -80,7 +80,7 @@ class SongController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Song $song
      * @return \Illuminate\Http\Response
      */
 
@@ -93,7 +93,7 @@ class SongController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Song $song
      * @return \Illuminate\Http\Response
      */
 
@@ -107,7 +107,7 @@ class SongController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Song $song
      * @return \Illuminate\Http\Response
      */
 
@@ -124,7 +124,7 @@ class SongController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Song $song
      * @return \Illuminate\Http\Response
      */
 
