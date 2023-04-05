@@ -84,6 +84,30 @@ Chiedere conferma di eliminazione record via Modal di BS5.
 
 ---
 
+[REALIZZARE UNA CRUD](#realizzare-una-crud)
+
+-   [Creare il Resource Model](#creare-il-resource-model)
+-   [Creare la Migration](#creare-la-migration)
+-   [Creare il Seeder](#creare-il-seeder)
+-   [Gestire le rotte](#gestire-le-rotte)
+-   [Il Controller Crud](#il-controller-crud)
+    -   [R - READ](#r---read)
+        -   [index - La Lista](#index---la-lista)
+        -   [show - Dettaglio](#show---il-dettaglio)
+    -   [C - CREATE](#c---create)
+        -   [create - Il Form](#create---il-form)
+        -   [store - Il Salvataggio](#store---il-salvataggio)
+    -   [U - UPDATE](#u---update)
+        -   [edit - Il Form](#edit---il-form)
+        -   [update - La Modifica](#update---la-modifica)
+    -   [D - DELETE](#d---delete)
+        -   [delete - Button e Modale](#delete---button-e-modale)
+        -   [destroy - Eliminazione](#destroy---eliminazione)
+-   [La validazione](#la-validazione)
+    -   [Il metodo validation](#il-metodo-validation)
+    -   [Validazione nel controller](#validazione-nel-controller)
+    -   [Validazione nelle viste](#validazione-nelle-viste)
+
 # REALIZZARE UNA CRUD
 
 > Step by step per la realizzazione di una CRUD
@@ -243,7 +267,7 @@ use\App\Model\Song;
 
 La lettura delle risorse dal Database
 
-#### index - La lista
+#### index - La Lista
 
 nel metodo index recupereremo i risultati con il metodo statico del modello `::all()`, oppure filtrando con `::where(...)->get()`. Se avessimo bisogno della paginazione, possiamo sostituire `all()` o `get()` con il metodo `paginate(n_items_per_page)`.
 
@@ -382,7 +406,7 @@ infine aggiungiamo il link al dettaglio nella cella "Action" della table
 
 ### C - CREATE
 
-#### create - Il form
+#### create - Il Form
 
 La rotta `create` dovrà restituire la vista del form
 
@@ -449,7 +473,7 @@ infine aggiungiamo il link al form di creazione vicino alla lista
 </table>
 ```
 
-#### store - Il salvataggio
+#### store - Il Salvataggio
 
 Predisponiamo il modello a ricevere dati dal form con la variabile d'istanza protetta `$fillable`
 
@@ -494,7 +518,7 @@ public function store(Request $request)
 
 ### U - UPDATE
 
-#### edit - Il form
+#### edit - Il Form
 
 La rotta `edit` dovrà restituire la vista del form, inviandole l'istanza da modificare ricevuta tramite dependency injection
 
@@ -610,7 +634,7 @@ infine aggiungiamo il link al form di modifica nella cella "Action" della table
 </table>
 ```
 
-#### update - La modifica
+#### update - La Modifica
 
 Nel metodo `update()` gestiremo la logica della modifica reindirizzando poi l'utente alla rotta `show`
 
@@ -737,7 +761,7 @@ Attenzione: il pulsante "Elimina" in ogni modale dovrà essere all'interno di un
 @endforeach
 ```
 
-#### destroy - L'eliminazione
+#### destroy - Eliminazione
 
 Non resta che gestire la logica dell'eliminazione nel Controller
 
